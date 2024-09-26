@@ -24,22 +24,29 @@ const renderImages = () =>{
     }).join("");
 };
 
-const rerenderSlideshow = () =>{
+const rerenderSlideshow = () => {
     const currentImage = metadata[currentImageIndex];
     slideshowContainer.innerHTML = `
     <img src="./n-pola/04-results/${currentImage.src}" alt="${currentImage.metadata.Description}"></img>
     `;
-}
+};
+
+const nextImage = () => {
+    currentImageIndex++;
+    if (currentImageIndex >= metadata.length) {
+        currentImageIndex = 0;
+    }
+    rerenderSlideshow();
+};
  
 document.addEventListener('DOMContentLoaded', function() {
     slideshowContainer = document.querySelector("[data-slideshow-container]");
     initImages();
     slideshowContainer.addEventListener("click", () => {
-        currentImageIndex++;
-        if (currentImageIndex >= metadata.length) {
-            currentImageIndex = 0;
-        }
-        rerenderSlideshow();
+        nextImage();
     });
+    window.setInterval(() => {
+        nextImage();
+    }, 10000);
 });
 
