@@ -6,6 +6,21 @@
         padding: var(--size-l);
     }
 
+    .image-container {
+        display: grid;
+        gap: var(--size-xs);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        a {
+            border-bottom: none;
+        }
+    }
+
     .details-list {
         display: block;
         margin-bottom: var(--size-xxs);
@@ -26,17 +41,6 @@
              font-weight: var(--fw-medium);
             }
          }
-    }
-
-    .image-container {
-        display: grid;
-        gap: var(--size-xs);
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-
-        img {
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
     }
 
     .slideshow-container {

@@ -18,7 +18,7 @@ const renderImages = () =>{
     imageContainer.innerHTML = metadata.map((image) => {
         return `
             <li>
-                <img src="./n-pola/04-results/${image.src}" alt="${image.metadata.Description}"></img>
+                <a href="./n-pola/04-results/${image.src}"><img src="./n-pola/04-results/${image.src}" alt="${image.metadata.Description}"></img></a>
             </li>
         `;
     }).join("");
