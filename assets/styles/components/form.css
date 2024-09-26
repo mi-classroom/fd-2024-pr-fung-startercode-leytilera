@@ -3,3 +3,14 @@
 
 /* Form
 ############################################################################ */
+
+.form {
+    input[type="text"], input[type="email"] {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: var(--size-s);
+        border-bottom: var(--border-width) solid var(--decoration-color);
+        margin-bottom: var(--size-xs);
+      }
+}
