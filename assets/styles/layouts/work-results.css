@@ -1,2 +1,55 @@
 /* Work Result
 ############################################################################ */
+
+.work-result {
+    .section {
+        padding: var(--size-l);
+    }
+
+    .details-list {
+        display: block;
+        margin-bottom: var(--size-xxs);
+
+        li {
+            padding-top: var(--size-xs);
+            border-top: var(--border-width) solid var(--decoration-color);
+     
+            p {
+             display: inline;
+     
+             a {
+                 border-bottom: none;
+             }
+            } 
+     
+            .big {
+             font-weight: var(--fw-medium);
+            }
+         }
+    }
+
+    .image-container {
+        display: grid;
+        gap: var(--size-xs);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+        img {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    }
+
+    .slideshow-container {
+        width: 100%;
+        
+        img {
+            aspect-ratio: 16/4;
+            object-fit: contain;
+        }
+    }
+
+    .youtube-player {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}

@@ -6,12 +6,13 @@ const initWorkList = () => {
         res.json().then((json) => {
             currentData = json;
             renderWorkList();
-        })
+        });
     });
 };
 
 const renderWorkList = () => {
     const finishedWorksList = document.querySelector("[data-js-finished-works]");
+    if (finishedWorksList == null) return;
     finishedWorksList.innerHTML = currentData.map((work) => {
         const date = new Date(Date.parse(work.date));
         const month = date.toLocaleString('default', { month: 'long' });
@@ -24,6 +25,6 @@ const renderWorkList = () => {
             </li>
         `
     }).join("");
-}
+};
 
 export { initWorkList };
